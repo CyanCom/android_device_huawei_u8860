@@ -7,7 +7,7 @@ TARGET_BOOTLOADER_BOARD_NAME := u8860
 TARGET_OTA_ASSERT_DEVICE := u8860,U8860,hwu8860
 
 # Kernel
-TARGET_KERNEL_CONFIG := cyanogenmod_u8860_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_honor_defconfig
 
 #TARGET_PREBUILT_KERNEL := device/huawei/u8860/kernel
 #TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/u8860/kernel
