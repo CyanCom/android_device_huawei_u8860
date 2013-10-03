@@ -12,23 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product-if-exists, vendor/huawei/u8860/u8860-vendor.mk)
-$(call inherit-product, device/huawei/msm7x30-common/common.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/huawei/u8860/overlay
 
-# Extra
-#PRODUCT_PACKAGES += \
-#    DisplayFix
+PRODUCT_COPY_FILES += \
+    device/huawei/u8860/fstab.huawei:root/fstab.u8860 \
 
-# These are the hardware-specific features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
-
-# Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_u8860
-PRODUCT_DEVICE := u8860
-PRODUCT_BRAND := Huawei
-PRODUCT_MANUFACTURER := Huawei
-PRODUCT_MODEL := HUAWEI U8860
+PRODUCT_COPY_FILES += \
+    device/huawei/msm7x30-common/ramdisk/init.huawei.rc:root/init.huawei.rc
+    device/huawei/msm7x30-common/ramdisk/init.huawei.usb.rc:root/init.huawei.usb.rc
+    device/huawei/msm7x30-common/ramdisk/ueventd.huawei.rc:root/ueventd.huawei.rc
