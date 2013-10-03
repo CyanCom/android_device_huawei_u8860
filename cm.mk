@@ -1,10 +1,9 @@
 # Correct bootanimation size for the screen
-TARGET_BOOTANIMATION_NAME := vertical-480x854
 TARGET_SCREEN_HEIGHT := 854
 TARGET_SCREEN_WIDTH := 480
 
 # Inherit device configuration
-$(call inherit-product, device/huawei/u8860/u8860.mk)
+$(call inherit-product, device/huawei/u8860/full_u8860.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_mini_phone.mk)
