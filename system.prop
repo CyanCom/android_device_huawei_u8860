@@ -2,12 +2,96 @@
 # system.prop for u8860
 #
 
+sys.usb.config=adb
+persist.service.adb.enable=1
+persist.service.adb.root=1
+
+# Default: /misc,/radio,/bootloader,/recovery,/efs
+ro.cwm.forbid_format=/boot,/cust
+
+# Enable console
+# ro.debuggable=1
+
+# Wireless LAN
+wifi.interface=eth0
+wifi.debug=true
+wifi.supplicant_scan_interval=15
+
+# Radio Interface Layer (RIL)
 rild.libpath=/system/lib/libril-qc-1.so
 rild.libargs=-d /dev/smd0
 ro.telephony.default_network=0
-ro.telephony.ril_class=HwQcomRIL
+# ro.telephony.ril_class=HuaweiRIL
+ro.telephony.ril_class=HuaweiHonorRIL
+ro.telephony.ril.v3=icccardstatus,datacall,signalstrength,facilitylock,singlepdp,qcomuiccstack
+ril.subscription.types=NV,RUIM
+ro.ril.shutdown=true
+ro.ril.hsxpa=2
+ro.ril.gprsclass=10
+ro.use_data_netmgrd=true
+ro.config.ehrpd=true
+keyguard.no_require_sim=true
 mobiledata.interfaces=rmnet0,gprs,ppp0
+net.dns1=194.25.2.129
+net.dns2=194.25.2.130
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
 
-ro.confg.hw_appsbootversion=U8860VSHENDUOS_APPSBOOT
-ro.confg.hw_appversion=U8860VSHENDUOS_KERNEL
-ro.confg.hw_appfsversion=U8860VSHENDUOS_SYSIMG
+# OpenGLES version
+ro.opengles.version=131072
+
+# DPI
+ro.sf.lcd_density=240
+
+# Graphics
+# See hwcomposer.cpp: CPU vs. GPU rendering
+debug.sf.hw=1
+# debug.composition.type=mdp|c2d|dyn; everthing else is GPU
+# Composition bypass
+# ro.sf.compbypass.enable=1
+# See hardware/qcom/display/libgralloc/framebuffer.cpp
+# Page flipping requires at least two framebuffers
+debug.gr.numframebuffers=2
+
+# Bluetooth
+ro.qualcomm.bluetooth.ftp=true
+ro.bluetooth.request.master=true
+ro.bluetooth.remote.autoconnect=true
+ro.qualcomm.bluetooth.dun=true
+net.bt.name=CM10-U8860
+ro.bt.bdaddr_path=/system/etc/bluetooth/bluetooth.addr
+
+# GPS / Location services
+ro.com.google.locationfeatures=1
+ro.com.google.networklocation=1
+ro.ril.def.agps.mode=2
+ro.ril.def.agps.feature=1
+
+# Storage
+ro.additionalmounts=/storage/sdcard1
+
+# Others
+# sys.checkfs.fat=false
+ro.tether.denied=false
+ro.rommanager.developerid=cyanogenmod
+ro.setupwizard.enable_bypass=1
+ro.serialno=66726564766A
+
+# Huawei
+ro.confg.hw_appsbootversion=U8860VCM9_APPSBOOT
+ro.confg.hw_appversion=U8860VCM9_KERNEL
+ro.confg.hw_appfsversion=U8860VCM9_SYSIMG
+
+hwui.render_dirty_regions=false  
+hwui.disable_vsync=false
+hwui.print_config=choice
+
+# Camera hack
+ro.camera.hack=msm7630_surf
