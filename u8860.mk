@@ -15,6 +15,9 @@
 
 DEVICE_PACKAGE_OVERLAYS += device/huawei/u8860/overlay
 
+$(call inherit-product-if-exists, vendor/huawei/u8860/u8860-vendor.mk)
+$(call inherit-product, device/huawei/msm7x30-common/common.mk)
+
 PRODUCT_COPY_FILES += \
     device/huawei/u8860/fstab.huawei:root/fstab.u8860 \
 
