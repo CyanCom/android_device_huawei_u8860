@@ -23,7 +23,7 @@ PRODUCT_COPY_FILES := device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-PRODUCT_NAME := custom_u8860
+PRODUCT_NAME := full_u8860
 PRODUCT_DEVICE := u8860
 PRODUCT_BRAND := Huawei
 PRODUCT_MODEL := Honor U8860
