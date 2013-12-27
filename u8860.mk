@@ -15,16 +15,12 @@
 
 DEVICE_PACKAGE_OVERLAYS += device/huawei/u8860/overlay
 
-$(call inherit-product-if-exists, vendor/huawei/u8860/u8860-vendor.mk)
+$(call inherit-product, vendor/huawei/u8860/u8860-vendor.mk)
 $(call inherit-product, device/huawei/msm7x30-common/common.mk)
+$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
 PRODUCT_COPY_FILES += \
-    device/huawei/u8860/fstab.huawei:root/fstab.u8860 \
+    device/huawei/u8860/fstab.huawei:root/fstab.huawei
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
-
-PRODUCT_COPY_FILES += \
-    device/huawei/msm7x30-common/ramdisk/init.huawei.rc:root/init.huawei.rc
-    device/huawei/msm7x30-common/ramdisk/init.huawei.usb.rc:root/init.huawei.usb.rc
-    device/huawei/msm7x30-common/ramdisk/ueventd.huawei.rc:root/ueventd.huawei.rc
